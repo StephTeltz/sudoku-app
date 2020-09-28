@@ -7,7 +7,7 @@
     "lint": "eslint \"src/**/*.{js,jsx}\" --quiet",
     "test": "jest",
     "compile": "babel src --ignore **/node_modules/** -d dist",
-    "build": "rm -rf dist && npm run test && npm run lint && npm run format && npm run compile && cd ./client && npm run build",
+    "build": "rm -rf dist && npm run test && npm run lint && npm run format && npm run compile && cd ./client && npm install && npm run build",
     "start": "npm run build && node dist/index.js"
   },
   "repository": {
