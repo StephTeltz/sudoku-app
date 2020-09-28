@@ -1,0 +1,60 @@
+{
+  "name": "sudoku-app",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "format": "prettier --ignore-path=./.prettierignore \"./src/**/*.{js,html}\" --write",
+    "lint": "eslint \"src/**/*.{js,jsx}\" --quiet",
+    "test": "jest",
+    "compile": "babel src --ignore **/node_modules/** -d dist",
+    "build": "rm -rf dist && npm run test && npm run lint && npm run format && npm run compile && cd ./client && npm run build",
+    "start": "npm run build && node dist/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/StephTeltz/sudoku.git"
+  },
+  "author": "Steph Teltz (teltzs@gmail.com)",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/StephTeltz/sudoku/issues"
+  },
+  "homepage": "https://github.com/StephTeltz/sudoku#readme",
+  "dependencies": {
+    "@babel/runtime": "^7.11.2",
+    "body-parser": "^1.19.0",
+    "core-js": "^3.6.5",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "node-fetch": "^2.6.1",
+    "react": "16.8.4",
+    "react-dom": "^16.8.4",
+    "react-redux": "^7.2.1",
+    "react-scripts": "3.4.3",
+    "redux": "^4.0.5",
+    "regenerator-runtime": "^0.13.7"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.11.6",
+    "@babel/core": "^7.11.6",
+    "@babel/plugin-transform-runtime": "^7.11.5",
+    "@babel/preset-env": "^7.11.5",
+    "@babel/preset-react": "^7.10.4",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.5.0",
+    "@testing-library/user-event": "^7.2.1",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.9.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-babel": "^5.3.1",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-react": "^7.20.6",
+    "eslint-plugin-react-hooks": "^4.1.2",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^26.4.2",
+    "jest-transform-stub": "^2.0.0",
+    "parcel-bundler": "^1.12.4",
+    "prettier": "^2.1.2"
+  }
+}
