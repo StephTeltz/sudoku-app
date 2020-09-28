@@ -11,7 +11,7 @@ class App extends React.Component {
 
   // Load a board initially
   componentDidMount() {
-    fetch("http://localhost:8080/sudoku/board/")
+    fetch("http://localhost/sudoku/board/")
       .then((res) => res.json())
       .then((json) => {
         this.props.dispatch(loadBoard(json));
@@ -25,7 +25,7 @@ class App extends React.Component {
         cellId: cellId,
         cellValue: cellValue,
       });
-      fetch("http://localhost:8080/sudoku/board/", {
+      fetch("http://localhost/sudoku/board/", {
         method: "PUT",
         headers: {
           "Content-type": "application/json",
@@ -37,7 +37,7 @@ class App extends React.Component {
           this.props.dispatch(loadBoard(json));
         });
     } else {
-      fetch("http://localhost:8080/sudoku/board/")
+      fetch("http://localhost/sudoku/board/")
         .then((res) => res.json())
         .then((json) => {
           this.props.dispatch(loadBoard(json));
